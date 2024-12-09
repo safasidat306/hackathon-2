@@ -112,7 +112,7 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
     <path
       fill="#928e8e"
       d="m23.707 22.293-5.969-5.969a10.016 10.016 0 1 0-1.414 1.414l5.969 5.969a1 1 0 0 0 1.414-1.414ZM10 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8Z"
-      data-orig inal="#000000"
+      data-original="#000000"
     />
   </svg>
   );
@@ -188,7 +188,7 @@ export const SearchIcon2: React.FC<IconProps> = ({ className, ...rest }) => (
   <path
     fill="#000000"
     d="m23.707 22.293-5.969-5.969a10.016 10.016 0 1 0-1.414 1.414l5.969 5.969a1 1 0 0 0 1.414-1.414ZM10 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8Z"
-    data-orig inal="#000000"
+    data-original="#000000"
   />
 </svg>
 );
@@ -211,3 +211,102 @@ export const InboxIcon: React.FC<IconProps> = ({ className, ...rest }) => (
     />
   </svg>
 );
+
+export const ShineIcon: React.FC<IconProps> = ({ className, ...rest }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlSpace="preserve"
+    width={230}
+    height={230}
+    enableBackground= "new 0 0 512 512"
+     viewBox="0 0 512 512"
+    {...rest}
+  >
+    <path
+      fill="#000"
+      d="M52 0c1.765 27.955 24.045 50.235 52 52-27.955 1.765-50.235 24.045-52 52-1.765-27.955-24.045-50.235-52-52 27.955-1.765 50.235-24.045 52-52Z"
+    />
+  </svg>
+);
+
+export const ShineIcon2: React.FC<IconProps> = ({ className, ...rest }) => (
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlSpace="preserve"
+  width={700}
+  height={700}
+  enableBackground= "new 0 0 812 812"
+   viewBox="0 0 812 812"
+  {...rest}
+>
+  <path
+    fill="#000"
+    d="M52 0c1.765 27.955 24.045 50.235 52 52-27.955 1.765-50.235 24.045-52 52-1.765-27.955-24.045-50.235-52-52 27.955-1.765 50.235-24.045 52-52Z"
+  />
+</svg>
+);
+
+export const Left: React.FC<IconProps> = ({ className, ...rest }) => (
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlSpace="preserve"
+  width="25px"
+  height="25px"
+  fillRule="evenodd"
+  enableBackground= "new 0 0 512 512"
+  viewBox="0 0 105 105"
+  {...rest}
+>
+  <path
+    fill="#0c0b0b"
+    fillRule="nonzero"
+    d="M97.914 47.917H16.306l26.221-26.221a4.162 4.162 0 0 0 0-5.891 4.163 4.163 0 0 0-5.892 0L3.302 49.134c-.384.387-.688.85-.9 1.358a4.171 4.171 0 0 0 0 3.184c.212.508.516.97.9 1.358l33.333 33.329a4.152 4.152 0 0 0 2.946 1.221 4.156 4.156 0 0 0 2.946-1.221 4.163 4.163 0 0 0 0-5.892l-26.221-26.22h81.608c2.3 0 4.167-1.867 4.167-4.167s-1.867-4.167-4.167-4.167z"
+    data-original="#000000"
+  />
+</svg>
+);
+
+export const Right: React.FC<IconProps> = ({ className, ...rest }) => (
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlSpace="preserve"
+  width="25px"
+  height="25px"
+  enableBackground="new 0 0 512 512"
+  viewBox="0 0 24 24"
+  {...rest}
+>
+  <path
+    fill="#060505"
+    d="m23.854 11.646-7.5-7.5a.5.5 0 0 0-.707 0l-.707.707a.5.5 0 0 0 0 .707L20.379 11H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h19.879l-5.44 5.44a.5.5 0 0 0 0 .706l.707.707a.5.5 0 0 0 .707 0l7.5-7.5a.5.5 0 0 0 0-.707z"
+    data-original="#000000"
+  />
+</svg>
+);
+
+export const Tick: React.FC<IconProps> = ({ className, ...rest }) => (
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlSpace="preserve"
+    width={17}
+    height={17}
+    fillRule="evenodd"
+    enableBackground="new 0 0 512 512"
+    viewBox="0 0 2.54 2.54"
+    {...rest}
+  >
+    <circle
+      cx={1.27}
+      cy={1.27}
+      r={1.27}
+      fill="#00b400"
+      data-original="#00ba00"
+    />
+    <path
+      fill="#fff"
+      d="M.873 1.89.41 1.391a.17.17 0 0 1 .008-.24.17.17 0 0 1 .24.009l.358.383.567-.53A.17.17 0 0 1 1.599 1l.266-.249a.17.17 0 0 1 .24.008.17.17 0 0 1-.008.24l-.815.76-.283.263-.125-.134z"
+      data-original="#ffffff"
+    />
+  </svg>
+);
+
