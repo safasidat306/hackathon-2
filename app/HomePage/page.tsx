@@ -1,8 +1,10 @@
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4&display=swap" rel="stylesheet"></link>
 import React from 'react'
 import Header from '../components/header/header';
 import Image from 'next/image';
 import Logos from '../components/logos/logos';
 import { Left, Right, Tick } from "@/app/Icons/icons";
+import Footer from '../components/footer/footer';
 
 const page = () => {
   return (
@@ -70,7 +72,7 @@ const page = () => {
             height={56}
             width={56}
             alt="small star"
-            className="absolute max-sm:hidden left-7 md:left-0 top-36 sm:top-64 md:top-44 lg:top-56 max-w-11 max-h-11 md:max-w-14 md:max-h-14 animate-[spin_3s_infinite]"
+            className="absolute max-sm:hidden left-7 md:left-0 top-36 sm:top-64 md:top-44 lg:top-56 max-w-11 max-h-11  md:max-h-14 animate-[spin_3s_infinite]"
           />
         </section>
       </div>
@@ -80,26 +82,22 @@ const page = () => {
    {/*New Arrival*/}
    <div className="mt-48">
   <div>
-    <h1 className="flex justify-center items-center font-extrabold text-[48px] leading-[57.6px] font-integralCF mb-10 text-center sm:text-[36px] sm:leading-[43.2px]">
+    <h1 className="flex justify-center items-center font-extrabold  max-sm:text-[32px] max-sm:pt-12 md:text-[48px] leading-[57.6px] font-integralCF mb-10 text-center sm:text-[36px] sm:leading-[43.2px]">
       NEW ARRIVALS
     </h1>
-    <div className="flex flex-row gap-8 justify-center items-center flex-wrap sm:gap-4">
-      {/* First Item */}
-      <div className="flex flex-col gap-1 w-[295px]">
-        <div className="w-full h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3">
-          <Image
-            src="/1.png"
-            height={100}
-            width={250}
-            alt="dress"
-            className=""
-          />
+
+    {/* Responsive Grid Container */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Card 1 */}
+      <div className="flex flex-col gap-1 items-center">
+        <div className="w-[295px] h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3">
+          <Image src="/1.png" height={100} width={250} alt="T-shirt" />
         </div>
         <h3 className="font-satoshi font-bold text-[20px] leading-[27px] text-center">
           T-SHIRT WITH TAPE DETAILS
         </h3>
         <div className="flex flex-row justify-center gap-1">
-          {[...Array(5)].map((_, idx) => (
+          {[...Array(4)].map((_, idx) => (
             <Image
               key={idx}
               src="/star.svg"
@@ -119,22 +117,17 @@ const page = () => {
         </h5>
       </div>
 
-      {/* Second Item */}
-      <div className="flex flex-col gap-1 w-[295px]">
-        <div className="w-full h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3">
-          <Image
-            src="/2.png"
-            height={50}
-            width={250}
-            alt="dress"
-            className=""
-          />
+      {/* Repeat for Other Cards */}
+      {/* Card 2 */}
+      <div className="flex flex-col gap-1 items-center">
+        <div className="w-[295px] h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3">
+          <Image src="/2.png" height={100} width={250} alt="Jeans" />
         </div>
         <h3 className="font-satoshi font-bold text-[20px] leading-[27px] text-center">
           SKINNY FIT JEANS
         </h3>
         <div className="flex flex-row justify-center gap-1">
-          {[...Array(5)].map((_, idx) => (
+          {[...Array(4)].map((_, idx) => (
             <Image
               key={idx}
               src="/star.svg"
@@ -149,7 +142,7 @@ const page = () => {
           </span>
           <span className="text-slate-600 font-satoshi text-[14px]">5</span>
         </div>
-        <div className="flex flex-row justify-center gap-3">
+        <div className="flex flex-row gap-3 justify-center">
           <h5 className="font-satoshi font-bold text-[24px] leading-[27.6px]">
             $240
           </h5>
@@ -162,22 +155,16 @@ const page = () => {
         </div>
       </div>
 
-      {/* Third Item */}
-      <div className="flex flex-col gap-1 w-[295px]">
-        <div className="w-full h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3">
-          <Image
-            src="/3.png"
-            height={50}
-            width={200}
-            alt="dress"
-            className=""
-          />
+      {/* Card 3 */}
+      <div className="flex flex-col gap-1 items-center">
+        <div className="w-[295px] h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3">
+          <Image src="/3.png" height={100} width={230} alt="Shirt" />
         </div>
         <h3 className="font-satoshi font-bold text-[20px] leading-[27px] text-center">
           CHECKERED SHIRT
         </h3>
         <div className="flex flex-row justify-center gap-1">
-          {[...Array(5)].map((_, idx) => (
+          {[...Array(4)].map((_, idx) => (
             <Image
               key={idx}
               src="/star.svg"
@@ -196,8 +183,46 @@ const page = () => {
           $180
         </h5>
       </div>
+
+      {/* Card 4 */}
+      <div className="flex flex-col gap-1 items-center">
+        <div className="w-[295px] h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3">
+          <Image src="/4.png" height={100} width={250} alt="Striped T-shirt" />
+        </div>
+        <h3 className="font-satoshi font-bold text-[20px] leading-[27px] text-center">
+          SLEEVE STRIPED T-SHIRT
+        </h3>
+        <div className="flex flex-row justify-center gap-1">
+          {[...Array(4)].map((_, idx) => (
+            <Image
+              key={idx}
+              src="/star.svg"
+              height={15}
+              width={15}
+              alt="star"
+            />
+          ))}
+          <Image src="/half-star.svg" height={7.5} width={7.5} alt="star" />
+          <span className="text-[#000000] ml-5 font-satoshi text-[14px]">
+            4.5/
+          </span>
+          <span className="text-slate-600 font-satoshi text-[14px]">5</span>
+        </div>
+        <div className="flex flex-row gap-3 justify-center">
+          <h5 className="font-satoshi font-bold text-[24px] leading-[27.6px]">
+            $130
+          </h5>
+          <h5 className="font-satoshi font-semibold line-through text-[24px] leading-[27.6px] text-slate-400">
+            $160
+          </h5>
+          <button className="w-[58px] h-[28px] rounded-[62px] bg-[#FF33331A] text-[#FF3333] text-center text-[12px] font-satoshi">
+            -30%
+          </button>
+        </div>
+      </div>
     </div>
   </div>
+
   <div className="flex flex-col justify-center gap-16 items-center my-8">
     <button className="w-[218px] h-[52px] rounded-[62px] border-[1px] border-slate-200 text-center font-satoshi font-medium text-[16px] leading-[21.6px]">
       View All
@@ -208,221 +233,119 @@ const page = () => {
 
 
 {/*Top Selling*/}
-<div>
-      <div className='mt-16'>
-      <div className=''>
-      <h1 className='flex justify-center items-center font-extrabold text-[48px] leading-[57.6px] font-integralCF mb-10 '>TOP SELLING</h1>
-<div className='flex flex-row gap-8 justify-center items-center'>
-  <div className='flex flex-col gap-1'>
-<div className='w-[295px] h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3'>
-<Image src="/5.png"
-            height={100}
-            width={250}
-            alt="dress"
-            className=""></Image>
-</div>
-
-<h3 className='font-satoshi font-bold text-[20px] leading-[27px]'>VERTICAL STRIPED SHIRT</h3>
-  <div className='flex flex-row'>
-  <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-<Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-              <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-              <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-              <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-<Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-             <span className='text-[#000000] ml-5 font-satoshi text-[14px]'>5.0/</span><span className='text-slate-600  font-satoshi text-[14px]'>5</span>
-</div>
-<div className='flex flex-row gap-3'>
-<h5 className='font-satoshi font-bold text-[24px] leading-[27.6px]'>$212</h5>
-<h5 className='font-satoshi font-semibold text-[24px] leading-[27.6px] text-slate-400 line-through'>$232</h5>
-<button className='w-[58px] h-[28px] rounded-[62px] bg-[#FF33331A] text-[#FF3333] text-center text-[12px] font-satoshi'>-30%</button>
-</div>
-</div>
-
-<div className='flex flex-col gap-1'>
-<div className='w-[295px] h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3'>
-<Image src="/6.png"
-            height={50}
-            width={250}
-            alt="dress"
-            className=""></Image>
-</div>
-
-<h3 className='font-satoshi font-bold text-[20px] leading-[27px]'>COURAGE GRAPHIC T-SHIRT</h3>
-  <div className='flex flex-row'>
-  <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-<Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-              <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-              <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-              <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-             <span className='text-[#000000] ml-5 font-satoshi text-[14px]'>4.0/</span>
-             <span className='text-slate-600  font-satoshi text-[14px]'>5</span>
-</div>
-<h5 className='font-satoshi font-bold text-[24px] leading-[27.6px]'>$145</h5>
-
-</div>
-
-<div className='flex flex-col gap-1'>
-<div className='w-[295px] h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3'>
-<Image src="/7.png"
-            height={50}
-            width={200}
-            alt="dress"
-            className=""></Image>
-</div>
-
-<h3 className='font-satoshi font-bold text-[20px] leading-[27px]'>LOOSE FIT BERMUDA SHORTS</h3>
-  <div className='flex flex-row'>
-  <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-<Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-              <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-              <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-             <span className='text-[#000000] ml-5 font-satoshi text-[14px]'>3.0/</span><span className='text-slate-600  font-satoshi text-[14px]'>5</span>
-</div>
-<h5 className='font-satoshi font-bold text-[24px] leading-[27.6px]'>$80</h5>
-
-</div>
-
-<div className='flex flex-col gap-1'>
-<div className='w-[295px] h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3'>
-<Image src="/8.png"
-            height={150}
-            width={150}
-            alt="dress"
-            className=""></Image>
-</div>
-
-<h3 className='font-satoshi font-bold text-[20px] leading-[27px]'>FADED SKINNY JEANS</h3>
-  <div className='flex flex-row'>
-  <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-<Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-              <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-              <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-              <Image src="/star.svg"
-            height={15}
-            width={15}
-            alt="star"
-            className=""></Image>
-
-<Image src="/half-star.svg"
-            height={7.5}
-            width={7.5}
-            alt="star"
-            className=""></Image>
-
-             <span className='text-[#000000] ml-5 font-satoshi text-[14px]'>4.5/</span><span className='text-slate-600  font-satoshi text-[14px]'>5</span>
-</div>
-<div className='flex flex-row gap-3'>
-<h5 className='font-satoshi font-bold text-[24px] leading-[27.6px]'>$210</h5>
-</div>
-</div>
-</div>
+<div className="mt-16 mx-6">
+  <h1 className="flex justify-center items-center font-extrabold max-sm:text-[32px] md:text-[48px] leading-[57.6px] font-integralCF mb-10">
+    TOP SELLING
+  </h1>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center items-center">
+    {/* Card 1 */}
+    <div className="flex flex-col gap-1">
+      <div className="w-full h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3">
+        <Image src="/5.png" height={100} width={250} alt="dress" />
       </div>
+      <h3 className="font-satoshi font-bold text-[20px] leading-[27px]">
+        VERTICAL STRIPED SHIRT
+      </h3>
+      <div className="flex flex-row">
+        {/* Stars */}
+        {[...Array(5)].map((_, i) => (
+          <Image key={i} src="/star.svg" height={15} width={15} alt="star" />
+        ))}
+        <span className="text-[#000000] ml-5 font-satoshi text-[14px]">
+          5.0/
+        </span>
+        <span className="text-slate-600 font-satoshi text-[14px]">5</span>
       </div>
-<div className='flex justify-center items-center my-8'>
-<button className='w-[218px] h-[52px] rounded-[62px] border-[1px] border-slate-200 text-center font-satoshi font-medium text-[16px] leading-[21.6px]'>View All</button>
-</div>
+      <div className="flex flex-row gap-3">
+        <h5 className="font-satoshi font-bold text-[24px] leading-[27.6px]">
+          $212
+        </h5>
+        <h5 className="font-satoshi font-semibold text-[24px] leading-[27.6px] text-slate-400 line-through">
+          $232
+        </h5>
+        <button className="w-[58px] h-[28px] rounded-[62px] bg-[#FF33331A] text-[#FF3333] text-center text-[12px] font-satoshi">
+          -30%
+        </button>
+      </div>
     </div>
+    {/* Card 2 */}
+    <div className="flex flex-col gap-1">
+      <div className="w-full h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3">
+        <Image src="/6.png" height={50} width={250} alt="dress" />
+      </div>
+      <h3 className="font-satoshi font-bold text-[20px] leading-[27px]">
+        COURAGE GRAPHIC T-SHIRT
+      </h3>
+      <div className="flex flex-row">
+        {[...Array(4)].map((_, i) => (
+          <Image key={i} src="/star.svg" height={15} width={15} alt="star" />
+        ))}
+        <span className="text-[#000000] ml-5 font-satoshi text-[14px]">
+          4.0/
+        </span>
+        <span className="text-slate-600 font-satoshi text-[14px]">5</span>
+      </div>
+      <h5 className="font-satoshi font-bold text-[24px] leading-[27.6px]">
+        $145
+      </h5>
+    </div>
+    {/* Card 3 */}
+    <div className="flex flex-col gap-1">
+      <div className="w-full h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3">
+        <Image src="/7.png" height={50} width={200} alt="dress" />
+      </div>
+      <h3 className="font-satoshi font-bold text-[20px] leading-[27px]">
+        LOOSE FIT BERMUDA SHORTS
+      </h3>
+      <div className="flex flex-row">
+        {[...Array(3)].map((_, i) => (
+          <Image key={i} src="/star.svg" height={15} width={15} alt="star" />
+        ))}
+        <span className="text-[#000000] ml-5 font-satoshi text-[14px]">
+          3.0/
+        </span>
+        <span className="text-slate-600 font-satoshi text-[14px]">5</span>
+      </div>
+      <h5 className="font-satoshi font-bold text-[24px] leading-[27.6px]">
+        $80
+      </h5>
+    </div>
+    {/* Card 4 */}
+    <div className="flex flex-col gap-1">
+      <div className="w-full h-[298px] flex justify-center items-center rounded-[20px] bg-[#F0EEED] mb-3">
+        <Image src="/8.png" height={150} width={150} alt="dress" />
+      </div>
+      <h3 className="font-satoshi font-bold text-[20px] leading-[27px]">
+        FADED SKINNY JEANS
+      </h3>
+      <div className="flex flex-row">
+        {[...Array(4)].map((_, i) => (
+          <Image key={i} src="/star.svg" height={15} width={15} alt="star" />
+        ))}
+        <Image src="/half-star.svg" height={7.5} width={7.5} alt="star" />
+        <span className="text-[#000000] ml-5 font-satoshi text-[14px]">
+          4.5/
+        </span>
+        <span className="text-slate-600 font-satoshi text-[14px]">5</span>
+      </div>
+      <h5 className="font-satoshi font-bold text-[24px] leading-[27.6px]">
+        $210
+      </h5>
+    </div>
+  </div>
+  {/* View All Button */}
+  <div className="flex justify-center items-center my-8">
+    <button className="w-[218px] h-[52px] rounded-[62px] border-[1px] border-slate-200 text-center font-satoshi font-medium text-[16px] leading-[21.6px]">
+      View All
+    </button>
+  </div>
+</div>
+
 
 {/*Dress Style*/}
 <div>
-    <div className='flex justify-center '>
-      <div className='w-[1239px] h-[866px] bg-[#F0F0F0] rounded-[40px] '>
+    <div className='flex justify-center max-md:hidden '>
+      <div className='w-[1209px] h-[866px] bg-[#F0F0F0] rounded-[40px] '>
             <h1 className='flex justify-center pt-20 pb-8 font-extrabold text-[48px] leading-[57.6px] font-integralCF mb-10 '>BROWSE BY DRESS STYLE
             </h1>
             <div className='flex flex-row justify-center items-center gap-3'>
@@ -443,6 +366,43 @@ const page = () => {
     </div>
 </div>
 
+{/*For Mob Screens*/}
+<div className='md:hidden flex justify-center mx-3'>
+  <div className='h-[975px]  w-[358px] rounded-[20px] bg-[#F0F0F0] px-3 '>
+   <h1 className=' flex justify-center text-center font-bold text-[32px] leading-[36px] font-integralCF py-4'>BROWSE BY DRESS STYLE</h1>
+<div className='flex justify-center items-center'>
+    <div className=' flex w-[310px] h-[190px] bg-white rounded-[20px] justify-between '>
+    <h2 className='px-6 py-6 text-[24px] font-satoshi font-bold'>Casual</h2>
+    <Image src = "/9.png" alt = "img" height={100} width={250} className='rounded-[20px]'></Image>
+    </div>
+    </div>
+
+    <div className='flex justify-center items-center py-3'>
+    <div className=' flex w-[310px] h-[190px] bg-white rounded-[20px] justify-between '>
+    <h2 className='px-6 py-6 text-[24px] font-satoshi font-bold'>Formal</h2>
+    <Image src = "/10.png" alt = "img" height={50} width={190} className='rounded-[20px]'></Image>
+    </div>
+    </div>
+
+    <div className='flex justify-center items-center '>
+    <div className=' flex w-[310px] h-[190px] bg-white rounded-[20px] justify-between '>
+    <h2 className='px-6 py-6 text-[24px] font-satoshi font-bold'>Party</h2>
+    <Image src = "/11.png" alt = "img" height={150} width={190} className='rounded-[20px]'></Image>
+    </div>
+    </div>
+
+    <div className='flex justify-center items-center py-3'>
+    <div className=' flex w-[310px] h-[190px] bg-white rounded-[20px] justify-between '>
+    <h2 className='px-6 py-6 text-[24px] font-satoshi font-bold'>Gym</h2>
+    <Image src = "/12.png" alt = "img" height={50} width={190} className='rounded-[20px]'></Image>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+
+
 {/*Reviews*/}
 <div className="my-20 px-4 lg:px-16">
       {/* Heading and Navigation */}
@@ -450,7 +410,7 @@ const page = () => {
         <h1 className="font-extrabold text-[32px] lg:text-[48px] leading-tight font-integralCF mb-6 lg:mb-10 text-center lg:text-left">
           OUR HAPPY CUSTOMERS
         </h1>
-        <div className="flex flex-row gap-4">
+        <div className="max-md:hidden flex flex-row gap-4">
           <Left />
           <Right />
         </div>
@@ -533,7 +493,7 @@ const page = () => {
       </div>
     </div>
 
-
+<Footer/>
     </div>
   )
 }
