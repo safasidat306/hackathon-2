@@ -5,10 +5,18 @@ import React, { useState } from "react";
 import Header from '../components/header/header';
 import Image from 'next/image';
 import Footer from "../components/footer/footer";
+
+const colors = [
+  { id: 1, name: 'Green', hex: '#4F4631' },
+  { id: 2, name: 'Red', hex: '#314F4A' },
+  { id: 3, name: 'Yellow', hex: '#31344F' },];
 const product : React.FC = () => {
   const tabs = ["Product Details", "Rating & Reviews", "FAQs"];
   const [activeTab, setActiveTab] = useState<number>(1);
+const [selectedColor, setSelectedColor] = useState<number | null>(null);
 
+  const handleColorClick = (id: number) => {
+    setSelectedColor(id);}
   return (
     <div>
       <Header/>
@@ -28,20 +36,20 @@ const product : React.FC = () => {
       <div>
         <div className='flex md:flex-row max-sm:flex-col justify-center items-center gap-4'>
           <div className='flex md:flex-col max-sm:flex-row gap-2 '> {/*1st col*/}
-<div className='max-sm:w-[112px] max-sm:h-[106px] md:w-[152px] md:h-[167px] rounded-[20px] border-[1px] border-black flex justify-center items-center bg-[#F0EEED]'>
+<div className='max-sm:w-[112px] max-sm:h-[106px] md:w-[152px] md:h-[167px] rounded-[20px] hover:border-[1px] hover:border-black cursor-pointer flex justify-center items-center bg-[#F0EEED]'>
   <Image src = "/sh-1.png" alt = "img" height={100} width={100}></Image>
 </div>
 
-<div className='w-[152px] h-[167px] max-sm:w-[112px] max-sm:h-[106px] rounded-[20px] border-[1px] flex justify-center items-center bg-[#F0EEED]'>
+<div className='w-[152px] h-[167px] max-sm:w-[112px] max-sm:h-[106px] rounded-[20px] border-[1px] hover:border-[1px] hover:border-black cursor-pointer flex justify-center items-center bg-[#F0EEED]'>
   <Image src = "/sh2.png" alt = "img" height={100} width={100}></Image>
 </div>
 
-<div className='w-[152px] h-[167px] max-sm:w-[111px] max-sm:h-[106px] rounded-[20px] border-[1px] flex justify-center items-center bg-[#F0EEED]'>
+<div className='w-[152px] h-[167px] max-sm:w-[111px] max-sm:h-[106px] rounded-[20px] border-[1px] hover:border-[1px] hover:border-black cursor-pointer flex justify-center items-center bg-[#F0EEED]'>
   <Image src = "/sh3.png" alt = "img" height={110} width={110} className='rounded-md max-sm:w-[100px] max-sm:h-[100px] '></Image>
 </div>
     </div>{/*1st col end*/}
 
-<div className='w-[444px] h-[530px] max-sm:w-[350px] max-sm:h-[290px] radius-[20px] bg-[#F0EEED] flex justify-center items-center rounded-[20px]'>{/*2nd col*/}
+<div className='w-[444px] h-[530px] max-sm:w-[350px] max-sm:h-[290px] radius-[20px] bg-[#F0EEED] hover:border-[1px] hover:border-black cursor-pointer flex justify-center items-center rounded-[20px]'>{/*2nd col*/}
 <Image src = "/sh-1.png" alt ="img" height={400} width={400} className="max-sm:w-[300px] max-sm:h-[250px] "></Image>
 </div>{/*2nd col end*/}
 
@@ -88,17 +96,31 @@ const product : React.FC = () => {
 <div className="flex max-sm:justify-center max-sm:items-center">
 <p className='font-satoshi font-normal max-sm:text-[14px] text-[16px] leading-[21.6px] text-[#00000099]'>Select Colors</p>
 </div>
-
 {/*row 6*/}
-<div className='flex flex-row py-[2px] max-sm:justify-center max-sm:items-center gap-4'>
-  <div className='h-[37px] w-[37px] max-sm:w-[39.14px] max-sm:h-[39.14px] bg-[#4F4631] rounded-full flex justify-center items-center'>
-    <Image src ="/Icons/tickmark.svg" alt ="tick" height={9.5} width={13}></Image>
-  </div>
+<div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+          {colors.map((color) => (
+            <div
+              key={color.id}
+              onClick={() => handleColorClick(color.id)}
+              style={{
+                width: '37px',
+                height: '37px',
+                borderRadius: '50%',
+                backgroundColor: color.hex,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                cursor: 'pointer',
+                border: selectedColor === color.id ? '1px solid #00000033' : '1px solid #ccc',
+              }}
+            >
+              {selectedColor === color.id && (
+                <span style={{ color: 'white', fontWeight: 'bold' }}>✓</span>
+              )}
+            </div>
+          ))}
+        </div>
 
-  <div className='h-[37px] w-[37px] max-sm:w-[39.14px] max-sm:h-[39.14px] bg-[#314F4A] rounded-full'></div>
-
-  <div className='h-[37px] w-[37px] max-sm:w-[39.14px] max-sm:h-[39.14px] bg-[#31344F] rounded-full'> </div>
-</div>
 
 {/*line*/}
 <div className=" max-sm:flex max-sm:justify-center max-sm:items-center">
@@ -112,10 +134,10 @@ const product : React.FC = () => {
 
 {/*row 8*/}
 <div className='gap-3 flex flex-row  max-sm:justify-center max-sm:items-center '>
-  <button className='max-sm:h-[39px] max-sm:w-[74px] h-[46px] w-[86px] rounded-[62px] text-center text-[#00000099] text-[16px] font-satoshi font-normal bg-[#F0F0F0] '>Small</button>
-  <button className='max-sm:h-[39px] max-sm:w-[90px] h-[46px] w-[105px] rounded-[62px] text-center text-[#00000099] text-[16px] font-satoshi font-normal bg-[#F0F0F0]'>Medium</button>
-  <button className='max-sm:h-[39px] max-sm:w-[76px] h-[46px] w-[89px] rounded-[62px] text-center text-[white] text-[16px] font-satoshi font-normal bg-[black]'>Large</button>
-  <button className='max-sm:h-[39px] max-sm:w-[89px] h-[46px] w-[104px] rounded-[62px] text-center text-[#00000099] text-[16px] font-satoshi font-normal bg-[#F0F0F0] '>X-Large</button>
+  <button className='max-sm:h-[39px] hover:bg-black hover:text-white transition-all duration-400 max-sm:w-[74px] h-[46px] w-[86px] rounded-[62px] text-center text-[#00000099] text-[16px] font-satoshi font-normal bg-[#F0F0F0] '>Small</button>
+  <button className='max-sm:h-[39px] hover:bg-black hover:text-white transition-all duration-400 max-sm:w-[90px] h-[46px] w-[105px] rounded-[62px] text-center text-[#00000099] text-[16px] font-satoshi font-normal bg-[#F0F0F0]'>Medium</button>
+  <button className='max-sm:h-[39px] hover:bg-black hover:text-white transition-all duration-400 max-sm:w-[76px] h-[46px] w-[89px] rounded-[62px] text-center text-[#00000099] text-[16px] font-satoshi font-normal bg-[#F0F0F0]'>Large</button>
+  <button className='max-sm:h-[39px] hover:bg-black hover:text-white transition-all duration-400 max-sm:w-[89px] h-[46px] w-[104px] rounded-[62px] text-center text-[#00000099] text-[16px] font-satoshi font-normal bg-[#F0F0F0] '>X-Large</button>
 </div>
 
 {/*line*/}
@@ -131,7 +153,7 @@ const product : React.FC = () => {
     <Image src ="/Icons/plus.svg" alt="plus-sign" height={18.75} width={18.75} className="max-sm:h-[15.63px] max-sm:w-[15.63px]"></Image>
   </button>
 
-<button className='w-[400px] h-[52px] max-sm:h-[44px] max-sm:w-[236px] bg-[black] text-center text-white rounded-[62px]'>Add to Cart</button>
+<button className='w-[400px] h-[52px] max-sm:h-[44px] hover:bg-white hover:text-black hover:border-black hover:border-[1px] max-sm:w-[236px] bg-[black] text-center text-white rounded-[62px]'>Add to Cart</button>
 </div>
     </div>
         </div>
@@ -175,7 +197,7 @@ const product : React.FC = () => {
 
 {/*reviews cards*/}
 <div className="flex flex-wrap justify-center gap-4 max-sm:px-4 items-center">
-<div className="w-[610px] h-[241.58px] max-sm:h-[224.19px] max-sm:w-[358px] border-[#0000001A] border-[1px] rounded-[20px]">
+<div className="w-[610px] h-[241.58px] max-sm:h-[224.19px] max-sm:w-[358px] duration-300 hover:translate-y-2 border-[#0000001A] border-[1px] rounded-[20px]">
   <div className="flex flex-col md:px-10 md:py-9 max-sm:px-5 max-sm:my-5">
     <div className="flex flex-row justify-between">
     <div className="flex flex-row  gap-1">{/*row 2*/}
@@ -199,7 +221,7 @@ const product : React.FC = () => {
   </div>
 </div>
 
-<div className="w-[610px] h-[241.58px] max-sm:h-[224.19px] max-sm:w-[358px] border-[#0000001A] border-[1px] rounded-[20px]">
+<div className="w-[610px] h-[241.58px] max-sm:h-[224.19px] max-sm:w-[358px] duration-300 hover:translate-y-2 border-[#0000001A] border-[1px] rounded-[20px]">
   <div className="flex flex-col md:px-10 md:py-9 max-sm:px-5 max-sm:my-5">
     <div className="flex flex-row justify-between">
     <div className="flex flex-row  gap-1">{/*row 2*/}
@@ -223,7 +245,7 @@ const product : React.FC = () => {
   </div>
 </div>
 
-<div className="w-[610px] h-[241.58px] max-sm:h-[224.19px] max-sm:w-[358px] border-[#0000001A] border-[1px] rounded-[20px]">
+<div className="w-[610px] h-[241.58px] max-sm:h-[224.19px] max-sm:w-[358px] duration-300 hover:translate-y-2 border-[#0000001A] border-[1px] rounded-[20px]">
   <div className="flex flex-col md:px-10 md:py-9 max-sm:px-5 max-sm:my-5">
     <div className="flex flex-row justify-between">
     <div className="flex flex-row  gap-1">{/*row 2*/}
@@ -247,7 +269,7 @@ const product : React.FC = () => {
   </div>
 </div>
 
-<div className="max-sm:hidden w-[610px] h-[241.58px] border-[#0000001A] border-[1px] rounded-[20px]">
+<div className="max-sm:hidden w-[610px] h-[241.58px] duration-300 hover:translate-y-2 border-[#0000001A] border-[1px] rounded-[20px]">
   <div className="flex flex-col px-10 py-9">
     <div className="flex flex-row justify-between">
     <div className="flex flex-row  gap-1">{/*row 2*/}
@@ -270,7 +292,7 @@ const product : React.FC = () => {
   </div>
 </div>
 
-<div className="max-sm:hidden  w-[610px] h-[241.58px] border-[#0000001A] border-[1px] rounded-[20px]">
+<div className="max-sm:hidden  w-[610px] h-[241.58px] duration-300 hover:translate-y-2 border-[#0000001A] border-[1px] rounded-[20px]">
   <div className="flex flex-col px-10 py-9">
     <div className="flex flex-row justify-between">
     <div className="flex flex-row  gap-1">{/*row 2*/}
@@ -293,7 +315,7 @@ const product : React.FC = () => {
   </div>
 </div>
 
-<div className="max-sm:hidden w-[610px] h-[241.58px] border-[#0000001A] border-[1px] rounded-[20px]">
+<div className="max-sm:hidden w-[610px] h-[241.58px] duration-300 hover:translate-y-2 border-[#0000001A] border-[1px] rounded-[20px]">
   <div className="flex flex-col px-10 py-9">
     <div className="flex flex-row justify-between">
     <div className="flex flex-row  gap-1">{/*row 2*/}
@@ -319,7 +341,7 @@ const product : React.FC = () => {
 
 
 <div className="flex justify-center items-center flex-col my-6">
-<div className="flex justify-center items-center w-[230px] h-[52px] rounded-[62px] border-[1px] border-[#0000001A] text-center font-satoshi font-medium text-[16px] leading-[21.6px]  ">Load More Reviews</div>
+<div className="flex justify-center items-center w-[230px] h-[52px] rounded-[62px] border-[1px] border-[#0000001A] text-center font-satoshi font-medium text-[16px] leading-[21.6px] cursor-pointer hover:bg-slate-50 ">Load More Reviews</div>
 <div className="max-sm:flex max-sm:justify-center max-sm:items-center max-sm:w-[284px] ">
 <h1 className="font-integralCF font-extrabold pt-10 max-sm:text-center max-sm:text-[32px] text-[48px] max-sm:leading-[36px] leading-[57.6px] uppercase">You might also like</h1>
 </div>
@@ -327,7 +349,7 @@ const product : React.FC = () => {
 
      <div className="flex flex-row my-14 gap-4 max-sm:gap-2 max-sm:px-1 ">{/* main row div*/}
  <div className="flex flex-col  max-sm:gap-1 gap-2">{/* main col div*/}
- <div className="w-[295px] h-[298px] rounded-[20px] max-sm:w-[160px] max-sm:h-[185.01px] bg-[#F0EEED] flex justify-center items-center ">
+ <div className="w-[295px] h-[298px] rounded-[20px] max-sm:w-[160px] max-sm:h-[185.01px] duration-300 hover:translate-y-4 bg-[#F0EEED] flex justify-center items-center ">
     <Image src ="/blue.png" alt="shirt" height={200} width={200} className="max-sm:w-[140px] max-sm:h-[140px]"></Image>
   </div>
   <h3 className="font-bold max-sm:text-[16px] font-satoshi text-[20px] leading-[27px] ">Polo with Contrast Trims</h3>
@@ -361,7 +383,7 @@ const product : React.FC = () => {
 </div>{/*main col div end*/}
 
 <div className="flex flex-col  max-sm:gap-1 gap-2">{/* main col div*/}
- <div className="w-[295px] h-[298px] rounded-[20px] max-sm:w-[160px] max-sm:h-[185.01px] bg-[#F0EEED] flex justify-center items-center ">
+ <div className="w-[295px] h-[298px] rounded-[20px] max-sm:w-[160px] max-sm:h-[185.01px] duration-300 hover:translate-y-4 bg-[#F0EEED] flex justify-center items-center ">
     <Image src ="/white.png" alt="shirt" height={200} width={200} className="max-sm:w-[140px] max-sm:h-[140px]"></Image>
   </div>
   <h3 className="font-bold max-sm:text-[16px] font-satoshi text-[20px] leading-[27px] ">Gradient Graphic T-shirt</h3>
@@ -389,7 +411,7 @@ const product : React.FC = () => {
 </div>{/*main col div end*/}
 
 <div className="flex flex-col gap-2 max-sm:hidden">{/* main col div*/}
-<div className="w-[295px] h-[298px] rounded-[20px] bg-[#F0EEED] flex justify-center items-center ">
+<div className="w-[295px] h-[298px] rounded-[20px] bg-[#F0EEED] duration-300 hover:translate-y-4 flex justify-center items-center ">
     <Image src ="/purple.png" alt="shirt" height={200} width={200}></Image>
   </div>
   <h3 className="font-bold font-satoshi text-[20px] leading-[27px] ">Polo with Tipping Details</h3>
@@ -418,7 +440,7 @@ const product : React.FC = () => {
 </div>{/*main col div end*/}
 
 <div className="flex flex-col gap-2 max-sm:hidden">{/* main col div*/}
-<div className="w-[295px] h-[298px] rounded-[20px] bg-[#F0EEED] flex justify-center items-center ">
+<div className="w-[295px] h-[298px] rounded-[20px] bg-[#F0EEED] duration-300 hover:translate-y-4 flex justify-center items-center ">
     <Image src ="/line.png" alt="shirt" height={200} width={200}></Image>
   </div>
   <h3 className="font-bold font-satoshi text-[20px] leading-[27px] ">Black Striped T-shirt</h3>
@@ -463,3 +485,4 @@ const product : React.FC = () => {
 }
 
 export default product
+  

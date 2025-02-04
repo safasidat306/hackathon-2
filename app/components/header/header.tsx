@@ -1,8 +1,9 @@
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4&display=swap" rel="stylesheet"></link>
-import React from 'react'
+import React, { useState } from "react";
 import { VectorIcon , SearchIcon , CartIcon , ListIcon ,SearchIcon2} from '@/app/Icons/icons'
 import { integralCF } from '@/app/fonts'
 import Image from 'next/image'
+
 export default function Header() {
   return (
   <div>
@@ -13,11 +14,20 @@ export default function Header() {
     <div className='md:flex gap-8 md:justify-between max-xs:gap-[115px] max-sm:gap-[125px] max-sm:flex max-sm:justify-between '>
         <div className='max-sm:float-left flex flex-row font-bold gap-2 max-sm:text-[25.2px] md:text-[32px] text-black max-sm:text-left'><div className='md:hidden lg:hidden flex justify-center items-center '><ListIcon/></div>SHOP.CO</div>
         <div className='gap-[24px] flex flex-row justify-center items-center max-sm:hidden '>
-            <div className='flex flex-row text-[16px] font-satoshi font-[400px] leading-21.6px '>Shop<VectorIcon/></div>
-            <div className='flex flex-row text-[16px] font-satoshi font-[400px] leading-21.6px'>On Sale</div>
-            <div className='flex flex-row text-[16px] font-satoshi font-[400px] leading-21.6px'>New Arrivals</div>
-            <div className='flex flex-row text-[16px] font-satoshi font-[400px] leading-21.6px'>Brands</div>
+       <ul className='list-style-none'>
+        <li><a href = "/HomePage" className=' flex flex-row text-[16px] hover:text-slate-500 transition duration-300 ease-in-out font-satoshi font-[400px] leading-21.6px cursor-pointer '>Shop<VectorIcon/></a></li>
+        </ul>
+        <ul className='list-style-none'>        
+        <li><a href = "/HomePage#NewArrivals" className='flex flex-row text-[16px] font-satoshi font-[400px] leading-21.6px cursor-pointer'>New Arrivals</a></li>
+        </ul>
+        <ul className='list-style-none'>        
+          <li><a href = "/ProductDetail" className='flex flex-row text-[16px] font-satoshi font-[400px] leading-21.6px cursor-pointer'>On Sale</a></li>
+        </ul>
+        <ul className='list-style-none'>        
+        <li><a href = "/components/Logos#Brands" className='flex flex-row text-[16px] font-satoshi font-[400px] leading-21.6px cursor-pointer'>Brands</a></li>
+        </ul>
         </div>
+      
         <div className='bg-[#F0F0F0] w-[577px] h-[48px] rounded-[62px] flex items-center pl-6  max-sm:hidden '><SearchIcon/><p className='ml-2 font-satoshi text-slate-400 leading-[21.6px] text-[16px] '>Search for products...</p></div>
         <div className='flex justify-center items-center md:gap-2 max-sm:gap-1 '>
             <div className='md:hidden lg:hidden'><SearchIcon2/></div>

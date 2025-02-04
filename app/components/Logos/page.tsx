@@ -26,6 +26,7 @@ const brandsData: { id: string; srcUrl: string }[] = [
 
 const Logos = () => {
   return (
+  <section id= "Brands">
     <div className="bg-black absolute">
       <div className="w-screen mx-auto flex flex-wrap items-center justify-center md:justify-between py-5 md:py-0 sm:px-4 xl:px-6 space-x-4">
         {brandsData.map((brand) => (
@@ -41,6 +42,7 @@ const Logos = () => {
         ))}
       </div>
     </div>
+  </section>
   );
 };
 

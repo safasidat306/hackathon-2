@@ -2,7 +2,7 @@
 import React from 'react'
 import Header from '../components/header/header';
 import Image from 'next/image';
-import Logos from '../components/logos/logos';
+import Logos from '../components/Logos/page';
 import { Left, Right, Tick } from "@/app/Icons/icons";
 import Footer from '../components/footer/footer';
 
@@ -21,9 +21,11 @@ const page = () => {
             Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
           </p>
           <div>
-            <button className="w-full md:ml-8 md:w-52 mb-5 md:mb-12 inline-block text-center bg-black hover:bg-black/80 transition-all text-white px-14 py-4 rounded-full">
-              Shop Now
-            </button>
+            <ul className='list-style-none '>
+                    <li><a href = "/CategoryPage" className="w-full md:ml-8 md:w-52 mb-5 md:mb-12 inline-block text-center bg-black hover:bg-black/80 transition-all text-white px-14 py-4 rounded-full">
+              Shop Now</a></li>
+              
+            </ul>
           </div>
           <div className="flex md:h-full md:max-h-11 lg:max-h-[52px] xl:max-h-[68px] items-center justify-center md:justify-start flex-wrap sm:flex-nowrap md:space-x-3 lg:space-x-6 xl:space-x-8 md:mb-[116px]">
             <div className="flex flex-col">
@@ -80,13 +82,14 @@ const page = () => {
    <Logos/>
 
    {/*New Arrival*/}
+   <section id="NewArrivals">
    <div className="mt-48">
   <div>
     <h1 className="flex justify-center items-center font-extrabold  max-sm:text-[32px] max-sm:pt-12 md:text-[48px] leading-[57.6px] font-integralCF mb-10 text-center sm:text-[36px] sm:leading-[43.2px]">
       NEW ARRIVALS
     </h1>
 
-    {/* Responsive Grid Container */}
+    
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
       {/* Card 1 */}
       <div className="flex flex-col gap-1 items-center">
@@ -230,7 +233,7 @@ const page = () => {
     <div className="w-full border-[1px] bg-slate-300"></div>
   </div>
 </div>
-
+</section>
 
 {/*Top Selling*/}
 <div className="mt-16 mx-6">
