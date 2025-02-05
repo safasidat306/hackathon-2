@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import Header from '../components/Header123/Header';
+import Header from '../components/header/Header';
 import Filters from '../components/Filters/filters';
 import Pro from '../components/products/Prod';
-import Footer from '../components/Footer123/Footer';
+import Footer from '../components/footer/Footer';
 
 const Page = () => {
   const [isFilterBarOpen, setIsFilterBarOpen] = useState(false);

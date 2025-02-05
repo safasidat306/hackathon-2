@@ -1,9 +1,9 @@
 "use client";
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4&display=swap" rel="stylesheet"></link>
 import React from 'react';
-import Header from '../components/Header123/Header';
+import Header from '../components/header/Header';
 import Image from 'next/image';
-import Footer from '../components/Footer123/Footer';
+import Footer from '../components/footer/Footer';
 
 interface Product {
   id: number;
