@@ -13,6 +13,7 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
     height="16px"
     enableBackground= "new 0 0 512 512"
     viewBox="0 0 100 100"
+    className={className}
     {...rest}
   >
     <path
@@ -31,6 +32,7 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
     height="18px"
     enableBackground ="new 0 0 512 512"
     viewBox="0 0 512 512"
+    className={className}
     {...rest}
   >
     <g fill="#110f0f">
@@ -54,8 +56,8 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
     width="18px"
     height="18px"
     enableBackground= "new 0 0 512 512"
-    
     viewBox="0 0 510 510"
+    className={className}
     {...rest}
   >
     <path
@@ -73,6 +75,7 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
     height="16px"
     enableBackground="new 0 0 512 512"
     viewBox="0 0 510 510"
+    className={className}
     {...rest}
   >
     <path
@@ -90,6 +93,7 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
     height={24}
     enableBackground="new 0 0 512 512"
     viewBox="0 0 24 24"
+    className={className}
     {...rest}
   >
     <path
@@ -107,6 +111,7 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
     height={18}
     enableBackground="new 0 0 512 512"
     viewBox="0 0 24 24"
+    className={className}
     {...rest}
   >
     <path
@@ -125,6 +130,7 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
     height={25}
     enableBackground="new 0 0 512 512"
     viewBox="0 0 24 24"
+    className={className}
     {...rest}
   >
     <path fill="#bac8d3" d="M12 12z" />
@@ -147,6 +153,7 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
     height={19}
     enableBackground= "new 0 0 512 512"
     viewBox="0 0 512 512"
+    className={className}
     {...rest}
   >
     <path
@@ -165,6 +172,7 @@ export const ListIcon: React.FC<IconProps> = ({ className, ...rest }) => (
   height={22}
   enableBackground= "new 0 0 512 512"
   viewBox="0 0 512 512"
+  className={className}
   {...rest}
 >
 <path
@@ -183,6 +191,7 @@ export const SearchIcon2: React.FC<IconProps> = ({ className, ...rest }) => (
   height={18}
   enableBackground="new 0 0 512 512"
   viewBox="0 0 24 24"
+  className={className}
   {...rest}
 >
   <path
@@ -202,6 +211,7 @@ export const InboxIcon: React.FC<IconProps> = ({ className, ...rest }) => (
     height={28}
     enableBackground= "new 0 0 512 512"
      viewBox="0 0 512 512"
+     className={className}
     {...rest}
   >
     <path
@@ -220,6 +230,7 @@ export const ShineIcon: React.FC<IconProps> = ({ className, ...rest }) => (
     height={230}
     enableBackground= "new 0 0 512 512"
      viewBox="0 0 512 512"
+     className={className}
     {...rest}
   >
     <path
@@ -237,6 +248,7 @@ export const ShineIcon2: React.FC<IconProps> = ({ className, ...rest }) => (
   height={700}
   enableBackground= "new 0 0 812 812"
    viewBox="0 0 812 812"
+   className={className}
   {...rest}
 >
   <path
@@ -255,6 +267,7 @@ export const Left: React.FC<IconProps> = ({ className, ...rest }) => (
   fillRule="evenodd"
   enableBackground= "new 0 0 512 512"
   viewBox="0 0 105 105"
+  className={className}
   {...rest}
 >
   <path
@@ -274,6 +287,7 @@ export const Right: React.FC<IconProps> = ({ className, ...rest }) => (
   height="25px"
   enableBackground="new 0 0 512 512"
   viewBox="0 0 24 24"
+  className={className}
   {...rest}
 >
   <path
@@ -293,6 +307,7 @@ export const Tick: React.FC<IconProps> = ({ className, ...rest }) => (
     fillRule="evenodd"
     enableBackground="new 0 0 512 512"
     viewBox="0 0 2.54 2.54"
+    className={className}
     {...rest}
   >
     <circle
