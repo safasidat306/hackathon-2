@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Header from '../components/header/Header';
 import Filters from '../components/Filters/filters';  {/* Change this import */}
 import Pro from '../components/products/Prod';
-import Footer from '../components/footer/Footer';
+import Footer from '../components/footer/footer';
 
 const Page = () => {
   const [isFilterBarOpen, setIsFilterBarOpen] = useState(false);

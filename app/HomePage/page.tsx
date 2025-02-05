@@ -4,7 +4,7 @@ import Header from '../components/header/Header';
 import Image from 'next/image';
 import Logos from '../components/Logos/page';
 import { Left, Right, Tick } from "@/app/Icons/icons";
-import Footer from '../components/footer/Footer';
+import Footer from '../components/footer/footer';
 
 const page = () => {
   return (

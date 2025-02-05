@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 import Header from '../components/header/Header';
 import Image from 'next/image';
-import Footer from "../components/footer/Footer";
+import Footer from "../components/footer/footer";
 
 const colors = [
   { id: 1, name: 'Green', hex: '#4F4631' },

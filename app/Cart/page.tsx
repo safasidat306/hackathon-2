@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Header from "../components/header/Header";
 import Image from "next/image";
-import Footer from "../components/footer/Footer";
+import Footer from "../components/footer/footer";
 
 interface Product {
   id: number;
