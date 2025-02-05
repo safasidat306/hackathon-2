@@ -5,9 +5,10 @@ import ColorSelector from '../Colors/Colors '
 import Slider from '../slider/slider'
 interface FiltersProps {
   onClose: () => void; 
+  isFilterBarOpen: boolean; 
 }
 
-const Filters: React.FC<FiltersProps> = ({ onClose }) => {
+const Filters: React.FC<FiltersProps> = ({ onClose ,isFilterBarOpen }: FiltersProps) => {
 
   return (
     <section id = "filters">
