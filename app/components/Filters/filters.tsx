@@ -146,6 +146,12 @@ const Filters: React.FC<FiltersProps> = ({ onClose ,isFilterBarOpen }: FiltersPr
         <div className='flex justify-center items-center'>
           <button className='w-[247px] md:h-[48px] max-sm:h-[30px] max-sm:w-[150px] bg-black rounded-[62px] text-white text-center '>Apply Filter</button>
           </div>
+
+          {isFilterBarOpen && (
+  <section id="filters">
+    {/* Tumhara pura filter ka content yahan aa jayega */}
+  </section>
+)}
           {/* {isfiltersOpen && (
         <div
           onClick={() => setIsfiltersOpen(false)}

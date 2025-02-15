@@ -45,10 +45,10 @@ const products: Product[] = [
   },
 ];
 
-const page = () => {
+const Page = () => {
   const [cartProducts, setCartProducts] = useState<Product[]>(products);
 
-  const handleQuantityChange = (id: number, change: number) => {
+  const HandleQuantityChange = (id: number, change: number) => {
     setCartProducts((prevProducts) =>
       prevProducts.map((product) =>
         product.id === id
@@ -58,7 +58,7 @@ const page = () => {
     );
   };
 
-  const handleDeleteProduct = (id: number) => {
+  const HandleDeleteProduct = (id: number) => {
     setCartProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));
   };
 
@@ -140,16 +140,16 @@ const page = () => {
                     </div>
                     <div className="flex flex-col gap-10">
                       <div className="flex justify-end mx-3">
-                        <button onClick={() => handleDeleteProduct(product.id)}>
+                        <button onClick={() => HandleDeleteProduct(product.id)}>
                           <Image src="/Icons/bin.svg" alt="delete-your-item" width={18} height={19.5} />
                         </button>
                       </div>
                       <div className="sm:w-[126px] max-sm:w-[105px] h-[44px] bg-[#F0F0F0] rounded-[62px] flex justify-center items-center">
-                        <button onClick={() => handleQuantityChange(product.id, -1)} style={{ marginRight: "10px" }}>
+                        <button onClick={() => HandleQuantityChange(product.id, -1)} style={{ marginRight: "10px" }}>
                           <p className="text-[40px] sm:-mt-2">-</p>
                         </button>
                         {product.quantity}
-                        <button onClick={() => handleQuantityChange(product.id, 1)} style={{ marginLeft: "10px" }}>
+                        <button onClick={() => HandleQuantityChange(product.id, 1)} style={{ marginLeft: "10px" }}>
                           <p className="text-[25px]">+</p>
                         </button>
                       </div>
@@ -196,7 +196,7 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
 
 
 // "use client";

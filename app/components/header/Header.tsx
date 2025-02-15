@@ -1,7 +1,7 @@
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4&display=swap" rel="stylesheet"></link>
-import React, { useState } from "react";
+import Link from "next/link";
+<Link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4&display=swap" rel="stylesheet"></Link>
+import React from "react";
 import { VectorIcon , SearchIcon , CartIcon , ListIcon ,SearchIcon2} from '@/app/Icons/icons'
-import { integralCF } from '@/app/fonts'
 import Image from 'next/image'
 
 export default function Header() {

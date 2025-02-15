@@ -1,21 +1,21 @@
 "use client";
-
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4&display=swap" rel="stylesheet"></link>
+import Link from "next/link";
+<Link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2,3,4&display=swap" rel="stylesheet"></Link>
 import React, { useState } from "react";
 import Header from '../components/header/Header';
 import Image from 'next/image';
 import Footer from "../components/footer/footer";
 
-const colors = [
+const Colors = [
   { id: 1, name: 'Green', hex: '#4F4631' },
   { id: 2, name: 'Red', hex: '#314F4A' },
   { id: 3, name: 'Yellow', hex: '#31344F' },];
-const product : React.FC = () => {
-  const tabs = ["Product Details", "Rating & Reviews", "FAQs"];
+const Product : React.FC = () => {
+  const Tabs = ["Product Details", "Rating & Reviews", "FAQs"];
   const [activeTab, setActiveTab] = useState<number>(1);
 const [selectedColor, setSelectedColor] = useState<number | null>(null);
 
-  const handleColorClick = (id: number) => {
+  const HandleColorClick = (id: number) => {
     setSelectedColor(id);}
   return (
     <div>
@@ -98,10 +98,10 @@ const [selectedColor, setSelectedColor] = useState<number | null>(null);
 </div>
 {/*row 6*/}
 <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
-          {colors.map((color) => (
+          {Colors.map((color) => (
             <div
               key={color.id}
-              onClick={() => handleColorClick(color.id)}
+              onClick={() => HandleColorClick(color.id)}
               style={{
                 width: '37px',
                 height: '37px',
@@ -162,7 +162,7 @@ const [selectedColor, setSelectedColor] = useState<number | null>(null);
  <div className="md:w-[1420px] py-8 flex justify-center items-center">
       {/* Tabs Container */}
       <div className="flex justify-center items-center border-b border-gray-200">
-        {tabs.map((tab, index) => (
+        {Tabs.map((tab, index) => (
           <button
             key={index}
             className={`font-satoshi max-sm:text-[16px] text-[20px] max-sm:px-4 md:px-36 leading-[22px] py-6 text-[#00000099] font-normal transition-all duration-300
@@ -216,7 +216,7 @@ const [selectedColor, setSelectedColor] = useState<number | null>(null);
     </div>
     <div className="font-satoshi font-bold max-sm:text-[16px] text-[20px] leading-[22px] flex flex-row gap-2 py-2">Samantha D. <br />  <span>
       <Image src ="/Icons/verified.svg" alt ="verified-icon" height={19.5} width={19.5}  className="max-sm:w-[15.44px] max-sm:h-[15.44px]"></Image></span></div>
-  <p className="font-satoshi font-normal text-[16px] leading-[22px] py-2 max-sm:text-[14px] text-[#00000099]">"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt."</p>
+  <p className="font-satoshi font-normal text-[16px] leading-[22px] py-2 max-sm:text-[14px] text-[#00000099]">&quot;I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It&apos;s become my favorite go-to shirt.&quot;</p>
       <p className="font-satoshi font-medium max-sm:p-[2px] text-[16px] max-sm:text-[14px] text-[#00000099]">Posted on August 14, 2023</p>  
   </div>
 </div>
@@ -240,7 +240,7 @@ const [selectedColor, setSelectedColor] = useState<number | null>(null);
     </div>
     <div className="font-satoshi font-bold max-sm:text-[16px] text-[20px] leading-[22px] flex flex-row gap-2 py-2 max-sm:py-[4px]">Alex M.<br />  <span>
       <Image src ="/Icons/verified.svg" alt ="verified-icon" height={19.5} width={19.5}  className="max-sm:w-[15.44px] max-sm:h-[15.44px]"></Image></span></div>
-  <p className="font-satoshi font-normal text-[16px] leading-[22px] py-2 max-sm:py-[4px] max-sm:text-[14px] text-[#00000099]">"The t-shirt exceeded my expectations! The colors are vibrant and the print quality is top-notch. Being a UI/UX designer myself, I'm quite picky about aesthetics, and this t-shirt definitely gets a thumbs up from me."</p>
+  <p className="font-satoshi font-normal text-[16px] leading-[22px] py-2 max-sm:py-[4px] max-sm:text-[14px] text-[#00000099]">&quot;The t-shirt exceeded my expectations! The colors are vibrant and the print quality is top-notch. Being a UI/UX designer myself, I&apos;m quite picky about aesthetics, and this t-shirt definitely gets a thumbs up from me.&quot;</p>
       <p className="font-satoshi font-medium text-[16px] max-sm:p-[2px] max-sm:text-[14px] text-[#00000099]">Posted on August 15, 2023</p>  
   </div>
 </div>
@@ -264,7 +264,7 @@ const [selectedColor, setSelectedColor] = useState<number | null>(null);
     </div>
     <div className="font-satoshi font-bold max-sm:text-[16px] text-[20px] leading-[22px] flex flex-row gap-2 py-[6px]">Ethan R.<br />  <span>
       <Image src ="/Icons/verified.svg" alt ="verified-icon" height={19.5} width={19.5}  className="max-sm:w-[15.44px] max-sm:h-[15.44px]"></Image></span></div>
-  <p className="font-satoshi font-normal text-[16px] leading-[22px] max-sm:text-[14px] p-[2px] text-[#00000099]">"This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt."</p>
+  <p className="font-satoshi font-normal text-[16px] leading-[22px] max-sm:text-[14px] p-[2px] text-[#00000099]">&quot;This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect. I can see the designer&apos;s touch in every aspect of this shirt.&quot;</p>
       <p className="font-satoshi font-medium text-[16px] max-sm:text-[14px] text-[#00000099] ">Posted on August 16, 2023</p>  
   </div>
 </div>
@@ -287,7 +287,7 @@ const [selectedColor, setSelectedColor] = useState<number | null>(null);
     </div>
     <div className="font-satoshi font-bold text-[20px] leading-[22px] flex flex-row gap-2 py-2">Olivia P. <br />  <span>
       <Image src ="/Icons/verified.svg" alt ="verified-icon" height={19.5} width={19.5}></Image></span></div>
-  <p className="font-satoshi font-normal text-[16px] leading-[22px] py-2 text-[#00000099]">"As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out."</p>
+  <p className="font-satoshi font-normal text-[16px] leading-[22px] py-2 text-[#00000099]">&quot;As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It&apos;s evident that the designer poured their creativity into making this t-shirt stand out.&quot;</p>
       <p className="font-satoshi font-medium text-[16px] text-[#00000099]">Posted on August 17, 2023</p>  
   </div>
 </div>
@@ -310,7 +310,7 @@ const [selectedColor, setSelectedColor] = useState<number | null>(null);
     </div>
     <div className="font-satoshi font-bold text-[20px] leading-[22px] flex flex-row gap-2 py-2">Liam K.<br />  <span>
       <Image src ="/Icons/verified.svg" alt ="verified-icon" height={19.5} width={19.5}></Image></span></div>
-  <p className="font-satoshi font-normal text-[16px] leading-[22px] py-2 text-[#00000099]">"This t-shirt is a fusion of comfort and creativity. The fabric is soft, and the design speaks volumes about the designer's skill. It's like wearing a piece of art that reflects my passion for both design and fashion."</p>
+  <p className="font-satoshi font-normal text-[16px] leading-[22px] py-2 text-[#00000099]">&quot;This t-shirt is a fusion of comfort and creativity. The fabric is soft, and the design speaks volumes about the designer&apos;s skill. It&apos;s like wearing a piece of art that reflects my passion for both design and fashion.&quot;</p>
       <p className="font-satoshi font-medium text-[16px] text-[#00000099]">Posted on August 18, 2023</p>  
   </div>
 </div>
@@ -333,7 +333,7 @@ const [selectedColor, setSelectedColor] = useState<number | null>(null);
     </div>
     <div className="font-satoshi font-bold text-[20px] leading-[22px] flex flex-row gap-2 py-2">Ava H.<br />  <span>
       <Image src ="/Icons/verified.svg" alt ="verified-icon" height={19.5} width={19.5}></Image></span></div>
-  <p className="font-satoshi font-normal text-[16px] leading-[22px] py-2 text-[#00000099]">""I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter."</p>
+  <p className="font-satoshi font-normal text-[16px] leading-[22px] py-2 text-[#00000099]">&quot;I&apos;m not just wearing a t-shirt; I&apos;m wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter.&quot;</p>
       <p className="font-satoshi font-medium text-[16px] text-[#00000099]">Posted on August 19, 2023</p>  
   </div>
 </div>
@@ -484,5 +484,5 @@ const [selectedColor, setSelectedColor] = useState<number | null>(null);
       )
 }
 
-export default product
+export default Product
   
